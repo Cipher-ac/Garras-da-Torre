@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d0yx2ewdkgai"]
+
+[ext_resource type="Script" uid="uid://c2vsc3tl3oitk" path="res://jogador.gd" id="1_c2wt1"]
+[ext_resource type="PackedScene" uid="uid://cr3tje0br6pvo" path="res://projetil.tscn" id="2_4obgb"]
+[ext_resource type="Texture2D" uid="uid://bogtnt1qmkhlo" path="res://icon.svg" id="2_q2130"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4obgb"]
+radius = 58.077534
+
+[node name="Jogador" type="CharacterBody2D" unique_id=568568638]
+script = ExtResource("1_c2wt1")
+cena_projetil = ExtResource("2_4obgb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=186944691]
+texture = ExtResource("2_q2130")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1009210177]
+shape = SubResource("CircleShape2D_4obgb")
+
+[node name="PontoTiro" type="Marker2D" parent="." unique_id=1615710732]
+
+[node name="TimerTiro" type="Timer" parent="." unique_id=907755492]
+wait_time = 0.3
+one_shot = true
