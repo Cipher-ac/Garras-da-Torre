@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://5b815ww2nvar"]
+
+[ext_resource type="Script" uid="uid://bxwyh7irosu4u" path="res://Scripts/pickup.gd" id="1_ggplj"]
+
+[node name="Pickup" type="Node2D" unique_id=1880451895]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1065494444]
+position = Vector2(169, 195)
+script = ExtResource("1_ggplj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=85716097]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=52264479]
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

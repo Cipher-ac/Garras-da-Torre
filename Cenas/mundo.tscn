@@ -1,8 +1,26 @@
 [gd_scene format=3 uid="uid://ccmv1eqq6sepm"]
 
 [ext_resource type="PackedScene" uid="uid://d0yx2ewdkgai" path="res://Cenas/jogador.tscn" id="1_6ba58"]
+[ext_resource type="PackedScene" uid="uid://5b815ww2nvar" path="res://Cenas/pickup.tscn" id="2_j5dva"]
 
 [node name="Node2D" type="Node2D" unique_id=1317853387]
 
 [node name="Jogador" parent="." unique_id=568568638 instance=ExtResource("1_6ba58")]
 position = Vector2(220, 243)
+
+[node name="Pickup" parent="." unique_id=1880451895 instance=ExtResource("2_j5dva")]
+position = Vector2(221, 159)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1637923215]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1178423153]
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.002
+anchor_right = 0.003
+anchor_bottom = 0.002
+offset_left = 5.5439997
+offset_top = -3.296
+offset_right = 121.544
+offset_bottom = 57.704
+text = "Moedas: 0"

@@ -5,6 +5,9 @@ extends CharacterBody2D
 
 @onready var ponto_tiro = $PontoTiro
 @onready var timer_tiro = $TimerTiro
+@onready var coin_label = $"../CanvasLayer/Label"
+
+var coins := 0
 
 func _physics_process(_delta: float) -> void:
 	# 1. Movimentação
@@ -17,6 +20,9 @@ func _physics_process(_delta: float) -> void:
 	
 	if direcao_tiro != Vector2.ZERO and timer_tiro.is_stopped():
 		atirar(direcao_tiro)
+	
+	coin_label.text = "coins: " + str(coins)
+	
 
 func atirar(dir: Vector2) -> void:
 	if cena_projetil == null: return
