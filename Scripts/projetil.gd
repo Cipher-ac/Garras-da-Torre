@@ -4,6 +4,8 @@ extends Area2D
 var direcao: Vector2 = Vector2.ZERO
 var velocidade_adicional: Vector2 = Vector2.ZERO
 
+var dano = 1
+
 func _process(delta: float) -> void:
 	var movimento_final = (direcao * velocidade_base) + velocidade_adicional
 	global_position += movimento_final * delta

@@ -9,10 +9,15 @@ extends CharacterBody2D
 
 var coins := 0
 
+var stats = {
+	"dano": 1,
+	"velocidade": 300.0
+}
+
 func _physics_process(_delta: float) -> void:
 	# 1. Movimentação
 	var direcao_mov = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direcao_mov * velocidade
+	velocity = direcao_mov * stats["velocidade"]
 	move_and_slide()
 
 	# 2. Lógica de Tiro
@@ -22,7 +27,6 @@ func _physics_process(_delta: float) -> void:
 		atirar(direcao_tiro)
 	
 	coin_label.text = "coins: " + str(coins)
-	
 
 func atirar(dir: Vector2) -> void:
 	if cena_projetil == null: return
@@ -36,6 +40,7 @@ func atirar(dir: Vector2) -> void:
 		direcao_final = Vector2(0, sign(dir.y))
 		
 	bala.direcao = direcao_final
+	bala.dano = stats["dano"]
 	bala.global_position = ponto_tiro.global_position
 	
 	
